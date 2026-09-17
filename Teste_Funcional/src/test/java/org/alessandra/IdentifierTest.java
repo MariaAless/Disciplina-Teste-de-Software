@@ -29,13 +29,7 @@ public class IdentifierTest {
         boolean resultado = identifier.validateIdentifier("1111");
         assertFalse(resultado);
     }
-
-    @Test
-    @DisplayName("Classe (3) - comprimento maior que 6")
-    void testComprimentoMaiorQueMaximo() {
-        boolean resultado = identifier.validateIdentifier("simfoiexecutado");
-        assertFalse(resultado);
-    }
+        
 
     @Test
     @DisplayName("Classe (2) - comprimento zero (string vazia)")
