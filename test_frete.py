@@ -34,3 +34,11 @@ def test_frete_peso_zero():
 def test_frete_peso_negativo():
     with pytest.raises(ValueError):
         calcular_frete(-1)
+
+def test_frete_limite_maximo():
+    assert calcular_frete(10000) == 30
+
+
+def test_frete_acima_limite_maximo():
+    with pytest.raises(ValueError):
+        calcular_frete(10001)
