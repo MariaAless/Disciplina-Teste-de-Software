@@ -1,5 +1,5 @@
+import pytest
 from frete import calcular_frete
-
 
 def test_frete_produto_500g():
     assert calcular_frete(500) == 10
@@ -25,3 +25,12 @@ def test_frete_limite_fim_faixa_2():
 
 def test_frete_limite_inicio_faixa_3():
     assert calcular_frete(5001) == 30
+
+def test_frete_peso_zero():
+    with pytest.raises(ValueError):
+        calcular_frete(0)
+
+
+def test_frete_peso_negativo():
+    with pytest.raises(ValueError):
+        calcular_frete(-1)
