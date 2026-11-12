@@ -9,3 +9,19 @@ def test_frete_produto_2000g():
 
 def test_frete_produto_6000g():
     assert calcular_frete(6000) == 30
+
+def test_frete_limites_faixa_1():
+    assert calcular_frete(1) == 10
+    assert calcular_frete(1000) == 10
+
+
+def test_frete_limite_inicio_faixa_2():
+    assert calcular_frete(1001) == 20
+
+
+def test_frete_limite_fim_faixa_2():
+    assert calcular_frete(5000) == 20
+
+
+def test_frete_limite_inicio_faixa_3():
+    assert calcular_frete(5001) == 30
